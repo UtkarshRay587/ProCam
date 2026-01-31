@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
     - name: Unzip ProCam project
       run: |
         unzip ProCam_FIXED.zip
-        mv ProCam_FIXED/* .
-        rm -rf ProCam_FIXED.zip ProCam_FIXED
+        mv ProCam/* .
+        rm -rf ProCam ProCam_FIXED.zip
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
